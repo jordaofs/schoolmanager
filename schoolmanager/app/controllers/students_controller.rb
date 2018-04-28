@@ -3,6 +3,13 @@ class StudentsController < ApplicationController
 
   def index
     @students = Student.all
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = Prawn::Document.new
+        send_data pdf.render, filename: 'report.pdf', type: 'application/pdf'
+      end
+    end
   end
 
   def show
@@ -11,17 +18,18 @@ class StudentsController < ApplicationController
 
   def new
     @student = Student.new
+    degree_select
   end
 
   def edit
-
+    degree_select
   end
 
   def create
     @student = Student.new(student_params)
 
     if @student.save
-      redirect_to students_path, notice: 'Student created'
+      redirect_to students_path, notice: 'Student created!'
     else
       puts @student.errors.full_messages
       render :new
@@ -46,11 +54,15 @@ class StudentsController < ApplicationController
   private
 
     def student_params
-      params.require(:student).permit(:name, :email, :cpf, :age)
+      params.require(:student).permit(:name, :email, :cpf, :age, :degree_id)
     end
 
     def find_student
       @student = Student.find(params[:id])
+    end
+
+    def degree_select
+      @degrees = Degree.all
     end
     
 end

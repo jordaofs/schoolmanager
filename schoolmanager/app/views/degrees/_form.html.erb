@@ -15,6 +15,13 @@
     <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
+  
+    <%= f.fields_for :subjects do |subjects_fields| %>
+    <div class="field">
+      <%= subjects_fields.label :name %><br>
+      <%= subjects_fields.text_field :name %>
+    </div>
+    <% end %>
 
   <div degree="actions">
     <%= f.submit %>

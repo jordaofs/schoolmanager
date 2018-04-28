@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Teachers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Subject</th>
+      <th>Degree</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @teacher_array.each do |degree| %>
+    <%= degree.name %>
+      <tr>
+        <%# <td><%= @teacher.name %></td> %>
+        <%# <td><%= subject.name</td> %> %>
+      </tr>
+    <%# <% end %> %>
+    <% end %>
+  </tbody>
+</table>
+<br>

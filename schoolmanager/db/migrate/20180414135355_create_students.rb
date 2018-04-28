@@ -5,6 +5,7 @@ class CreateStudents < ActiveRecord::Migration[5.1]
       t.string :email, null: false
       t.integer :age, null: false
       t.string :cpf, null: false
+      t.references :degree, index: true
 
       t.timestamps
     end

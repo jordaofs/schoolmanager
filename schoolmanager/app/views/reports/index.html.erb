@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Reports</h1>
+
+<%= form_for :teacher, url: "/reports/teachers" do |form| %>
+  <%= form.text_field :name %>
+  <%= form.submit 'Search by Teacher' %>
+<% end  %>
+
+<%= form_for :degree, url: "/reports/degrees" do |form| %>
+  <%= form.text_field :name %>
+  <%= form.submit 'Search by Degree' %>
+<% end  %>
+
+<%= link_to 'Studens by Degree', students_reports_path %><br>
+<%= link_to 'Teachers by Subject', teachers_reports_path %><br>
+<br>
