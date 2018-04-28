@@ -78,6 +78,8 @@ class DegreesController < ApplicationController
         teacher.degree_id = id1
         degree.subjects << subject
         degree.teachers << teacher
+        # subject.teachers << teacher
+        # subject.teachers.degree_id << degree.id
         format.html { redirect_to degrees_path, notice: 'Subject and Teacher add' }
       end
     else

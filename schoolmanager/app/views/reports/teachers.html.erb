@@ -13,13 +13,13 @@
   </thead>
 
   <tbody>
-    <% @teacher_array.each do |degree| %>
-    <%= degree.name %>
+    <% @teachers.each do |teacher| %>
+     <% teacher.subjects do |subject| %>
       <tr>
-        <%# <td><%= @teacher.name %></td> %>
-        <%# <td><%= subject.name</td> %> %>
+        <td><%= teacher.name %></td>
+        <td><%= subject.name %></td>
       </tr>
-    <%# <% end %> %>
+      <% end %>
     <% end %>
   </tbody>
 </table>

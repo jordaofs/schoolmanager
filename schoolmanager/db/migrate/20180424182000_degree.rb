@@ -16,5 +16,11 @@ class Degree < ActiveRecord::Migration[5.1]
       t.belongs_to :teacher, index: true
     end
 
+    # create_table :subjects_teachers, id: false do |t|
+    #   t.belongs_to :subject, index: true
+    #   t.belongs_to :teacher, index: true
+    #   t.references :degree, index: true
+    # end
+
   end
 end
