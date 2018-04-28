@@ -61,6 +61,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
+    cpf_cnpj (0.4.1)
     crass (1.0.4)
     erubi (1.7.1)
     execjs (2.7.0)
@@ -178,6 +179,7 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
+  cpf_cnpj
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   puma (~> 3.7)
