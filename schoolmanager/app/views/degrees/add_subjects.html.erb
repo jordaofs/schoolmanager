@@ -1,0 +1,18 @@
+<h2>Add Subjects and Teachers</h2>
+<%= form_for(params[:degree_id]) do |f| %>
+  <div class="field">
+  <%= f.label :Subject %>
+  <%= f.text_field :subjects %>
+</div>
+
+  <div class="field">
+  <%= f.label :Teacher %>
+  <%= f.text_field :teachers %>
+</div>
+
+  <div class="actions">
+    <%= f.submit "Copy Subjects" %>
+  </div>
+<% end %>
+
+<%# <%= button_to "Copy", { action: "post" } %> %>

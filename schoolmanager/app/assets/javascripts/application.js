@@ -12,4 +12,6 @@
 //
 //= require rails-ujs
 //= require turbolinks
+//= require cocoon
+//= require reports_kit/application
 //= require_tree .

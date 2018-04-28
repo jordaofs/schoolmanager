@@ -11,6 +11,7 @@ class SubjectsController < ApplicationController
 
   def new
     @subject = Subject.new
+    teacher_select
   end
 
   def edit
@@ -46,11 +47,15 @@ class SubjectsController < ApplicationController
   private
 
     def subject_params
-      params.require(:subject).permit(:name)
+      params.require(:subject).permit(:name, :teacher_id)
     end
 
     def find_subject
       @subject = Subject.find(params[:id])
+    end
+
+    def teacher_select
+      @teachers_options_for_select = Teacher.all
     end
     
 end
